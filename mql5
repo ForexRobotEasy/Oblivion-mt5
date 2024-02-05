@@ -1,0 +1,84 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                                 Oblivion mt5.mq5 |
+//|                        Copyright 2023, Forex Robot Easy Team      |
+//|                                           https://forexroboteasy.com|
+//+------------------------------------------------------------------+
+#property copyright 'Copyright 2023, Forex Robot Easy Team'
+#property link      'https://forexroboteasy.com'
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+    // Add initialization code here
+
+    return(INIT_SUCCEEDED);
+}
+
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+    // Add deinitialization code here
+}
+
+//+------------------------------------------------------------------+
+//| Expert start function                                            |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+    // Add trading logic here
+
+    if (IsTradeAllowed())
+    {
+        // Call proprietary author's indicator
+        double indicatorValue = CustomIndicator();
+
+        // Implement trading functionality based on the indicator value
+        if (indicatorValue > 0)
+        {
+            OpenBuyOrder();
+        }
+        else if (indicatorValue < 0)
+        {
+            OpenSellOrder();
+        }
+    }
+}
+
+//+------------------------------------------------------------------+
+//| Check if trading is allowed                                      |
+//+------------------------------------------------------------------+
+bool IsTradeAllowed()
+{
+    // Add code to check if trading is allowed
+    return true; // Placeholder
+}
+
+//+------------------------------------------------------------------+
+//| Call proprietary author's indicator                              |
+//+------------------------------------------------------------------+
+double CustomIndicator()
+{
+    // Add code to calculate the indicator value
+    return 0.0; // Placeholder
+}
+
+//+------------------------------------------------------------------+
+//| Open a buy order                                                  |
+//+------------------------------------------------------------------+
+void OpenBuyOrder()
+{
+    // Add code to open a buy order
+}
+
+//+------------------------------------------------------------------+
+//| Open a sell order                                                 |
+//+------------------------------------------------------------------+
+void OpenSellOrder()
+{
+    // Add code to open a sell order
+}
